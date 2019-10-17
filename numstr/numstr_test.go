@@ -7,7 +7,12 @@ import (
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
-func Test(t *testing.T) {
+func TestOrdiaryPattern(t *testing.T) {
 	testdata := analysistest.TestData()
 	analysistest.Run(t, testdata, numstr.Analyzer, "a")
+}
+
+func TestNamedPackage(t *testing.T) {
+	testdata := analysistest.TestData()
+	analysistest.Run(t, testdata, numstr.Analyzer, "b")
 }

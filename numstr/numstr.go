@@ -47,9 +47,6 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if !ok {
 				return
 			}
-			if pkg, ok := caller.X.(*ast.Ident); !(ok && pkg.Name == "fmt") {
-				return
-			}
 
 			if pass.TypesInfo.ObjectOf(caller.Sel).Pkg() != fmtpkg {
 				return
