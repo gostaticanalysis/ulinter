@@ -14,6 +14,14 @@ func main() {
 	s, ok := i.(string) // ok
 	fmt.Println(s, ok)
 
+	if s := i.(string); s != "" { // want `type assertion must be checked`
+		println(s)
+	}
+
+	if s, ok := i.(string); ok { // ok
+		println(s)
+	}
+
 	switch n := i.(type) { // ok
 	case string:
 		fmt.Println(n)
